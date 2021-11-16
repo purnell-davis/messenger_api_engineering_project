@@ -25,7 +25,7 @@ I've included a Makefile to run handy dev commands.
 
 
 ### Start/Invoke the API
-After setup (`make setup`), you may also need to activate the virtual environment.
+After setup (`make setup`), you may also need to manually activate the virtual environment.
 ```
 source .venv/bin/activate
 ```
