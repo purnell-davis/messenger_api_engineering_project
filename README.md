@@ -25,10 +25,11 @@ I've included a Makefile to run handy dev commands.
 
 
 ### Start/Invoke the API
-After setup (`make setup` and `make install`), you may also need to activate the virtual environment.
+After setup (`make setup`), you may also need to activate the virtual environment.
 ```
 source .venv/bin/activate
 ```
+Then run `make install`.
 
 You'll then start the API by running: `make start-api`.
 
@@ -141,7 +142,7 @@ Relational Table that maintains each user who is in each chatroom.
 #### Testing
 
 ##### sqlite file
-You can run SQL directly against the DB by opening the db file using `sqlite3`.
+You can run SQL directly against the DB by opening the db file using `sqlite3`. The default db file is `messenger_app.db`.  This can be changed with an environment variable: `MESSENGER_DB_SQLITE_FILE`.
 
 ```
 $ sqlite3 messenger_app.db
@@ -170,4 +171,29 @@ I also created an example setup that demonstrates the relationshop between each 
 
 Run `make example-setup`, then reference `example.db`.
 
-The exmaple setup creates users, a chatroom, invites users to the chatroom, then generates messages in the chatroom.
+The example setup creates users, a chatroom, invites users to the chatroom, then generates messages in the chatroom.
+```
+$ sqlite3 example.db
+SQLite version 3.22.0 2018-01-22 18:45:57
+Enter ".help" for usage hints.
+
+sqlite> SELECT * FROM message;
+1|1|1|hello||2021-01-10 13:01:10|2021-11-16 07:47:07
+2|1|2|hi. how are you?||2021-01-10 13:01:10|2021-11-16 07:47:07
+3|1|1|im well||2021-01-10 13:01:10|2021-11-16 07:47:07
+4|1|1|how r u?||2021-01-10 13:01:10|2021-11-16 07:47:07
+5|1|2|great!||2021-01-10 13:01:10|2021-11-16 07:47:07
+
+sqlite> SELECT * FROM chatroom;
+1|my chatroom|1|2021-11-16 07:47:07
+
+sqlite> SELECT * FROM user;
+1|aaron||2021-11-16 07:47:07
+2|betty||2021-11-16 07:47:07
+3|carol||2021-11-16 07:47:07
+
+sqlite> SELECT * FROM user2chatroom;
+1|1
+1|2
+1|3
+```
