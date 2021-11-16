@@ -163,3 +163,11 @@ I wrote some functional tests. Since I didn't have much time, I decided to write
 You can run the tests via `make test`.
 
 The output will show you the results of the tests that I wrote and the test coverage.
+
+
+##### Example Setup
+I also created an example setup that demonstrates the relationshop between each entity.
+
+Run `make example-setup`, then reference `example.db`.
+
+The exmaple setup creates users, a chatroom, invites users to the chatroom, then generates messages in the chatroom.
