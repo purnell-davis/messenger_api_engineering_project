@@ -167,7 +167,7 @@ The output will show you the results of the tests that I wrote and the test cove
 
 
 ##### Example Setup
-I also created an example setup that demonstrates the relationshop between each entity.
+I also created an example setup that demonstrates the relationship between each entity.
 
 Run `make example-setup`, then reference `example.db`.
 
